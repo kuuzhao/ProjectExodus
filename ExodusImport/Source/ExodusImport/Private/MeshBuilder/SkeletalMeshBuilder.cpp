@@ -673,14 +673,18 @@ void SkeletalMeshBuildData::processBlendShapes(USkeletalMesh *skelMesh, const Js
 
 			morphTarget->MarkPackageDirty();
 
-			auto registrationResult = skelMesh->RegisterMorphTarget(morphTarget);
-			needMorphInvalidate = needMorphInvalidate | registrationResult;
+            skelMesh->RegisterMorphTarget(morphTarget);
+			needMorphInvalidate = true;
 			UE_LOG(JsonLog, Log, TEXT("Registration result: %d. Target %s (%d), frame %d"),
-				(int)registrationResult, *curBlendShape.name, blendShapeIndex, blendFrameIndex);
+				(int)0, *curBlendShape.name, blendShapeIndex, blendFrameIndex);
 		}
 	}
 
 	if (needMorphInvalidate){
+        // TODO: zhaoliang
+        //      don't support blend shape right now
+        #if 0
 		skelMesh->InitMorphTargetsAndRebuildRenderData();
+        #endif
 	}
 }

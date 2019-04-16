@@ -10,6 +10,9 @@
 #include "JsonRigidbody.h"
 #include "JsonPhysics.h"
 
+#include "Engine/EngineTypes.h"
+
+
 class JsonGameObject{
 public:
 	FString name;

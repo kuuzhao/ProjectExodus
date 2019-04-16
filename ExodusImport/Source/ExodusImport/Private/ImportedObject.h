@@ -3,6 +3,8 @@
 #include "JsonObjects.h"
 #include "Runtime/CoreUObject/Public/UObject/StrongObjectPtr.h"
 
+#include "Components/SceneComponent.h"
+
 /*
 This structure holds "spawned game object" information.
 A game object can be spawned as a component or as an actor.

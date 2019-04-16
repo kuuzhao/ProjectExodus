@@ -7,6 +7,8 @@
 #include "Runtime/Engine/Classes/Animation/Skeleton.h"
 #include "Runtime/Engine/Classes/Animation/MorphTarget.h"
 
+#include "SkelImport.h"
+
 using namespace UnrealUtilities;
 
 #if 0
@@ -232,9 +234,9 @@ static void fillTestSkinMeshWithMeshTools(USkeletalMesh* skelMesh){
 		Now, we CAN reinvent the wheel and fill renderable data ourselves, BUT this wouldn't compute normals, and will be a bit error prone for future releases.
 		Then again in a future release half of this code might disappear altogether.
 	*/
-	TArray<SkeletalMeshImportData::FVertInfluence> meshInfluences;
-	TArray<SkeletalMeshImportData::FMeshWedge> meshWedges;
-	TArray<SkeletalMeshImportData::FMeshFace> meshFaces;
+	TArray<FVertInfluence> meshInfluences;
+	TArray<FMeshWedge> meshWedges;
+	TArray<FMeshFace> meshFaces;
 	TArray<FVector> meshPoints;
 	TArray<int32> pointToOriginalMap;
 	TArray<FText> buildWarnMessages;
@@ -398,7 +400,7 @@ static void fillTestSkinMeshWithMeshTools(USkeletalMesh* skelMesh){
 	#endif
 		morphTarget->PopulateDeltas(deltas, 0, morphLodModel.Sections);
 		morphTarget->MarkPackageDirty();
-		auto registrationResult = skelMesh->RegisterMorphTarget(morphTarget);
+		skelMesh->RegisterMorphTarget(morphTarget);
 	}
 
 	/*

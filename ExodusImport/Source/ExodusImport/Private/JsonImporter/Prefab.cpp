@@ -1,6 +1,8 @@
 #include "JsonImportPrivatePCH.h"
 #include "JsonImporter.h"
 
+#include "Editor.h"
+
 #define JSON_DISABLE_PREFAB_IMPORT
 
 /*

@@ -6,6 +6,8 @@
 #include "Runtime/Engine/Classes/Engine/SkeletalMesh.h"
 #include "Runtime/Engine/Public/Rendering/SkeletalMeshModel.h"
 
+#include "SkelImport.h"
+
 class UStaticMesh;
 class USkeletalMesh;
 class UMaterial;
@@ -20,9 +22,9 @@ struct SkeletalMeshBuildData{
 
 	TArray<UMorphTarget*> morphTargets;
 
-	TArray<SkeletalMeshImportData::FVertInfluence> meshInfluences;
-	TArray<SkeletalMeshImportData::FMeshWedge> meshWedges;
-	TArray<SkeletalMeshImportData::FMeshFace> meshFaces;
+	TArray<FVertInfluence> meshInfluences;
+	TArray<FMeshWedge> meshWedges;
+	TArray<FMeshFace> meshFaces;
 	TArray<FVector> meshPoints;
 	TArray<int32> pointToOriginalMap;
 	TArray<FText> buildWarnMessages;
