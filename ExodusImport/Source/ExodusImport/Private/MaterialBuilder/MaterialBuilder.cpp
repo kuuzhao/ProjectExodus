@@ -120,9 +120,9 @@ UMaterial* MaterialBuilder::getBaseMaterial(const JsonMaterial &jsonMat) const{
 }	
 
 FString MaterialBuilder::getBaseMaterialPath(const JsonMaterial &jsonMat) const{
-	FString defaultMatPath = TEXT("/ExodusImport/exodusSolidMaterial");
-	FString transparentMatPath = TEXT("/ExodusImport/exodusBlendMaterial");
-	FString maskedMatPath = TEXT("/ExodusImport/exodusMaskMaterial");
+	FString defaultMatPath = TEXT("/Game/Materials/UnitySolid");
+	FString transparentMatPath = TEXT("/Game/Materials/UnitySolid");
+	FString maskedMatPath = TEXT("/Game/Materials/UnitySolid");
 	//UE_LOG(JsonLog, Log, TEXT("Selecting default mat path for: %s(%s)"), *jsonMat.name, *jsonMat.path);
 
 	auto baseMaterialPath = defaultMatPath;

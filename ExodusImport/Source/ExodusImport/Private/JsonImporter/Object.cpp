@@ -545,7 +545,7 @@ bool JsonImporter::configureStaticMeshComponent(ImportWorkData &workData, UStati
 		return true;
 	}
 
-	if (!collisionOnlyMesh){
+	if (!collisionOnlyMesh && jsonGameObj.renderers.Num() > 0){
 		const auto &renderer = jsonGameObj.renderers[0];
 		auto materials = jsonGameObj.getFirstMaterials();
 

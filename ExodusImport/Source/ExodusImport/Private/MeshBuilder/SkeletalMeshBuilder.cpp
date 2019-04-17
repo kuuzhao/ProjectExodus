@@ -673,7 +673,7 @@ void SkeletalMeshBuildData::processBlendShapes(USkeletalMesh *skelMesh, const Js
 
 			morphTarget->MarkPackageDirty();
 
-            skelMesh->RegisterMorphTarget(morphTarget);
+            skelMesh->RegisterMorphTarget(morphTarget);;
 			needMorphInvalidate = true;
 			UE_LOG(JsonLog, Log, TEXT("Registration result: %d. Target %s (%d), frame %d"),
 				(int)0, *curBlendShape.name, blendShapeIndex, blendFrameIndex);
